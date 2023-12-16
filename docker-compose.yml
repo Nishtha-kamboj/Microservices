@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  frontend:
+    image: myapp-frontend
+    build: ./frontend
+    ports:
+      - "3001:3000"
+    depends_on:
+      - backend
+
+  backend:
+    image: myapp-backend
+    build: ./backend
+    ports:
+      - "5001:5000"
